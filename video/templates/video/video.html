@@ -6,10 +6,13 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Video Name</h1>
-        <p>
-          Video goes here
-        </p>
+        <h1 class="fw-light">{{ queried_video.title }}</h1>
+        <video controls>
+          <!-- The "video_file" is the field from model, and "url" is a Django magic thing that will build the video URL
+           for you
+           -->
+          <source src="{{ queried_video.video_file.url }}" type="video/mp4">
+        </video>
       </div>
     </div>
   </section>
