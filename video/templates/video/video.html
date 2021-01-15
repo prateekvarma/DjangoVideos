@@ -1,6 +1,7 @@
 {% extends 'video/base.html' %}
-{% block main %}
+{% load humanize %}
 
+{% block main %}
 <main>
 
   <section class="py-5 text-center container">
@@ -13,6 +14,7 @@
            -->
           <source src="{{ queried_video.video_file.url }}" type="video/mp4">
         </video>
+        <p>{{ queried_video.date_posted|naturaltime }}</p>
       </div>
     </div>
   </section>
